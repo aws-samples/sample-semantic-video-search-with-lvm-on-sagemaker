@@ -2,7 +2,7 @@ omegaconf
 accelerate>=0.22.0
 sentencepiece
 opencv-python-headless
-transformers==4.47.0
+transformers==4.48.0
 protobuf
 opensearch-py
 requests_aws4auth
