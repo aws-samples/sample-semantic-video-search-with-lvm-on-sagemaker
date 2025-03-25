@@ -1,0 +1,25 @@
+model_name: <TO_BE_PROVIDED> #path to huggingface.co pointing to the artifact, see reference below
+model_embedding_dim: <TO_BE_PROVIDED> #vector length of the embeddings generated with the chosen model
+aws_region: <TO_BE_PROVIDED> #AWS region string where services are deployed
+device: 'cuda' #whether to use CPU or GPU during processing
+
+video_decoder:
+    sampling_rate: 5 #each N-th frame to be picked from the video
+    batch_size: 64 #batch size for video processing inference with the chosen model
+
+smoothing:
+    enabled: True #whether to enable smoothing during video processing
+    kernel_size: 11 #convolutional filter size to use when smoothing is enabled
+    sigma: 1.8 #recommendation is to set the value to kernel_size/6
+
+opensearch:
+    collection_id: <TO_BE_PROVIDED>  #collection id in OpenSearch Serverless
+    index_name: <TO_BE_PROVIDED> #index id in OpenSearch Serverless
+
+
+
+# Suggested models to try:
+# - 'laion/CLIP-ViT-B-32-laion2B-s34B-b79K' (embedding dimensions: 512) - one of the base OpenCLIP models
+# - 'laion/CLIP-ViT-H-14-laion2B-s32B-b79K' (embedding dimensions: 1024) - one of the best OpenCLIP models
+# - 'google/siglip-base-patch16-224' (embedding dimensions: 768) - one of the base SigLIP models
+# - 'google/siglip-so400m-patch14-384'  (embedding dimensions: 1152) - one of the best multi-lingual SigLIP models

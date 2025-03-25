@@ -1,0 +1,12 @@
+opencv-python-headless
+requests-aws4auth
+opensearch-py
+pytube
+sentencepiece
+omegaconf
+accelerate>=0.22.0
+transformers
+protobuf
+requests_aws4auth
+plotly
+matplotlib
